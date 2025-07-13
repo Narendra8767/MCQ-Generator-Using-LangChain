@@ -9,9 +9,9 @@ I recently built a powerful tool that leverages the capabilities of LLMs and Lan
 
 
 🛠️ Tech Stack:
-LangChain – for prompt templating and OpenAI model interaction
-OpenAI GPT-4 API – for natural language generation
-Flask – to build the web interface
+LangChain – for prompt templating and OpenAI model interaction<br>
+OpenAI GPT-4 API – for natural language generation<br>
+Flask – to build the web interface<br>
 pdfplumber, python-docx – for extracting text from PDFs and DOCX files
 FPDF – for generating downloadable PDF quiz files
 
