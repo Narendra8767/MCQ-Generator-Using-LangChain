@@ -1,0 +1,119 @@
+## MCQ
+Question: What is Docker primarily used for?
+A) Building websites
+B) Running container applications
+C) Developing mobile apps
+D) Managing databases
+Correct Answer: B
+
+## MCQ
+Question: What problem does Docker solve in terms of consistency across environments?
+A) Dependency clashes
+B) Resource contention
+C) Variations in configurations
+D) Scaling applications
+Correct Answer: C
+
+## MCQ
+Question: Which component of Docker Engine is responsible for managing Docker objects like images and containers?
+A) Docker Daemon
+B) Docker CLI
+C) REST API
+D) Docker Image
+Correct Answer: A
+
+## MCQ
+Question: What is a Docker image?
+A) A collection of Docker containers
+B) A lightweight, portable environment
+C) A software package containing everything needed to run an application
+D) A tool for managing Docker registries
+Correct Answer: C
+
+## MCQ
+Question: How are Docker images created?
+A) Using the Docker CLI
+B) By running containers
+C) Through the docker build command
+D) By pulling from Docker registries
+Correct Answer: C
+
+## MCQ
+Question: What is the purpose of a Dockerfile?
+A) To create Docker images
+B) To manage Docker containers
+C) To automate the image creation process
+D) To interact with the Docker daemon
+Correct Answer: C
+
+## MCQ
+Question: What is the function of the CMD instruction in a Dockerfile?
+A) Sets environment variables
+B) Copies files
+C) Specifies the starting point for the image
+D) Provides a default command to run when the container starts
+Correct Answer: D
+
+## MCQ
+Question: What is a Docker container?
+A) A tool for building Docker images
+B) An isolated environment for running applications
+C) A component of Docker Engine
+D) A service for storing Docker images
+Correct Answer: B
+
+## MCQ
+Question: What is the purpose of a Docker registry?
+A) To manage Docker containers
+B) To create Docker images
+C) To store and distribute Docker images
+D) To run Docker applications
+Correct Answer: C
+
+## MCQ
+Question: Which is an example of a public Docker registry?
+A) Amazon ECR
+B) Google Container Registry
+C) Docker Hub
+D) Azure Container Registry
+Correct Answer: C
+
+## MCQ
+Question: What benefit do Docker registries provide in terms of version control?
+A) Centralized image management
+B) Collaboration
+C) Security
+D) Versioning images
+Correct Answer: D
+
+## MCQ
+Question: In which use-case scenario would Docker be beneficial for Microservices Architecture?
+A) Cloud Migration
+B) Scalable Web Applications
+C) Continuous Integration and Continuous Deployment
+D) Simplifying deployment and maintenance of independent services
+Correct Answer: D
+
+## MCQ
+Question: How does Docker benefit Cloud Migration?
+A) Simplifies the migration process
+B) Enhances resource utilization
+C) Speeds up testing processes
+D) Ensures consistent deployment
+Correct Answer: A
+
+## MCQ
+Question: What is a key benefit of using Docker for Machine Learning and AI applications?
+A) Ensures consistent runtime environment
+B) Simplifies scaling of model training
+C) Speeds up the setup of test environments
+D) Improves deployment speed and reliability
+Correct Answer: A
+
+## MCQ
+Question: What use-case scenario involves developing and deploying APIs in containers?
+A) Testing and QA
+B) Machine Learning and AI
+C) API Development and Deployment
+D) Microservices Architecture
+Correct Answer: C

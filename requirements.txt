@@ -1,0 +1,8 @@
+Flask
+pdfplumber
+python-docx
+fpdf
+langchain
+openai
+python-dotenv
+certifi

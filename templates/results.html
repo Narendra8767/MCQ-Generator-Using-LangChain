@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Generated MCQs | MCQ Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #38b000;
+            --danger-color: #ef233c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+        
+        .results-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+        
+        .mcq {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .mcq:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .question {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .option {
+            padding: 0.8rem;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f4ff;
+        }
+        
+        .correct-answer {
+            font-weight: 600;
+            color: var(--success-color);
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background-color: rgba(56, 176, 0, 0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .correct-answer i {
+            margin-right: 8px;
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-pdf {
+            background-color: #d62828;
+        }
+        
+        .btn-pdf:hover {
+            background-color: #ba181b;
+        }
+        
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .options {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Generated MCQs</h1>
+        <div class="results-info">
+            <p>Here are the multiple-choice questions generated from your document:</p>
+        </div>
+
+        {% for mcq in mcqs.split("## MCQ") %}
+            {% if mcq.strip() %}
+                {% set question_parts = mcq.split('A)') %}
+                {% set question_text = question_parts[0].strip() %}
+                {% set options_part = question_parts[1] %}
+                
+                {% set option_a = options_part.split('B)')[0].strip() %}
+                {% set option_b = options_part.split('B)')[1].split('C)')[0].strip() %}
+                {% set option_c = options_part.split('C)')[1].split('D)')[0].strip() %}
+                {% set option_d = options_part.split('D)')[1].split('Correct Answer:')[0].strip() %}
+                {% set correct_answer = options_part.split('Correct Answer:')[1].strip() %}
+                
+                <div class="mcq">
+                    <div class="question">{{ question_text }}</div>
+                    <div class="options">
+                        <div class="option">A) {{ option_a }}</div>
+                        <div class="option">B) {{ option_b }}</div>
+                        <div class="option">C) {{ option_c }}</div>
+                        <div class="option">D) {{ option_d }}</div>
+                    </div>
+                    <div class="correct-answer">
+                        <i class="fas fa-check-circle"></i>
+                        Correct Answer: {{ correct_answer }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="download-buttons">
+            <a href="/download/{{ txt_filename }}" class="btn">
+                <i class="fas fa-file-alt"></i> Download as TXT
+            </a>
+            <a href="/download/{{ pdf_filename }}" class="btn btn-pdf">
+                <i class="fas fa-file-pdf"></i> Download as PDF
+            </a>
+        </div>
+        
+        <a href="/" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Generate More MCQs
+        </a>
+    </div>
+</body>
+</html>
