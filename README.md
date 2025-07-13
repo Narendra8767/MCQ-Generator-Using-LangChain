@@ -13,6 +13,7 @@ pdfplumber, python-docx – for extracting text from PDFs and DOCX files
 
 FPDF – for generating downloadable PDF quiz files
 
+![image](https://github.com/Narendra8767/MCQ-Generator-Using-LangChain/blob/8758a7d8e212741605521ead747cb3ec4705bca2/image/workflow.png)
 
 📈 Project Workflow:
 1️⃣ File Upload
