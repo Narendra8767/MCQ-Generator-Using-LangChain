@@ -1,6 +1,6 @@
 🚀 Built an AI-Powered MCQ Generator Using LangChain + OpenAI API
 I recently built a powerful tool that leverages the capabilities of LLMs and LangChain to automatically generate Multiple Choice Questions (MCQs) from any uploaded document — making content creation easier for educators, trainers, and exam designers. 📚🤖
-
+![image alt](https://github.com/Narendra8767/MCQ-Generator-Using-LangChain/blob/9dc19eb26f69e395460bf370cde62efcc5e263f2/image/index.png)
 
 🛠️ Tech Stack:
 LangChain – for prompt templating and OpenAI model interaction
